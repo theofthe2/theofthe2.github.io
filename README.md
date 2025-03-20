@@ -1,1 +1,1 @@
-# [theofthe.github.io](theofthe.github.io/index.html)
+# [theofthe.github.io][theofthe.github.io]
