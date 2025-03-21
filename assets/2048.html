@@ -1,9 +1,26 @@
-<!doctype html>
-<html>
-  <head>
-<title>2048</title>
-<style>
-          .credits-button {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .game-container {
+            text-align: center;
+        }
+
+        .credits-button {
             background-color: #28a745;
             padding: 15px;
             color: white;
@@ -13,16 +30,28 @@
             border-radius: 8px;
             width: 200px;
             transition: background-color 0.3s ease;
+            margin-top: 20px;
         }
+
         .credits-button:hover {
             background-color: #218838;
         }
-</style>
+
+        .credits-button:focus {
+            outline: 2px solid #155724;
+        }
+    </style>
+</head>
 <body>
-    <object>
-        <embed src="../ruffle/2048.swf" width="820" height="600" />
-    </object>
-<button onclick="window.location.href = '../index.html';" class="credits-button">Go back</button>
+
+    <div class="game-container">
+        <object>
+            <embed src="../ruffle/2048.swf" width="820" height="600" />
+        </object>
+        <button onclick="window.location.href = '../index.html';" class="credits-button">Go back</button>
+    </div>
+
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
 </body>
-<html>
+</html>
