@@ -7,4 +7,4 @@ theofthe2 the funny
 _______________________________________________________________________________
 cool math games but not maths
 
-website here [theofthe2.github.io](https://theofthe2.github.io)
+website [here](https://theofthe2.github.io)
