@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;	
+            background-color: #f4f4f9;    
             color: #333;
             margin: 0;
             padding: 0;
@@ -74,8 +74,8 @@
         <p style="font-size: 1.2em; color: #0056b3;">ask if u wanna be added to credits</p>
         <div class="game-buttons">
             <button onclick="window.location.href = 'assets/credits.html';" class="credits-button">Credits</button>
-            <button onclick="window.location.href = 'assets/blockblast.html';">Block Blast</button>
             <button onclick="window.location.href = 'assets/2048.html';">2048</button>
+            <button onclick="window.location.href = 'assets/blockblast.html';">Block Blast</button>
             <button onclick="window.location.href = 'assets/grandskibidi.html';">Grand Skibidi Town</button>
             <button onclick="window.location.href = 'assets/grindcraft.html';">Grindcraft (not working)</button>
             <button onclick="window.location.href = 'assets/grindages.html';">Grindcraft ages</button>
@@ -84,14 +84,26 @@
             <button onclick="window.location.href = 'assets/ltf.html';">Learn to Fly 1</button>
             <button onclick="window.location.href = 'assets/ltf2.html';">Learn to Fly 2</button>
             <button onclick="window.location.href = 'assets/ltf3.html';">Learn to Fly 3</button>
+            <button onclick="window.location.href = 'assets/PACMAN.html';">Pacman</button>
             <button onclick="window.location.href = 'assets/redball4.html';">Redball 4</button>
             <button onclick="window.location.href = 'assets/rocketpult.html';">Rocketpult</button>
             <button onclick="window.location.href = 'assets/rocketclone.html';">Rocket league clone</button>
             <button onclick="window.location.href = 'assets/run3.html';">Run 3</button>
             <button onclick="window.location.href = 'assets/stack/index.html';">Stack</button>
-            <button onclick="window.location.href = 'assets/PACMAN.html';">Pacman</button>
             <button onclick="window.location.href = 'assets/Tetris.html';">Tetris</button>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.querySelector(".game-buttons");
+            const buttons = Array.from(container.children);
+            const creditsButton = buttons.find(button => button.textContent.trim() === "Credits");
+            const otherButtons = buttons.filter(button => button !== creditsButton);
+            otherButtons.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim()));
+            container.innerHTML = "";
+            if (creditsButton) container.appendChild(creditsButton);
+            otherButtons.forEach(button => container.appendChild(button));
+        });
+    </script>
 </body>
 </html>
