@@ -10,43 +10,34 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #searchBar {
-  margin: 20px;
-  padding: 12px;
-  width: calc(100% - 40px);
-  font-size: 18px;
-  box-sizing: border-box;
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-  border: 1px solid #333;
-  border-radius: 6px;
-  outline: none;
+    margin: 20px;
+    padding: 12px;
+    width: calc(100% - 40px);
+    font-size: 18px;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 6px;
+    outline: none;
 }
-#linkContainer {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px;
-}
-#linkContainer a {
+a:link, a:visited {
   background-color: #000000;
   color: white;
-  flex: 1;
-  min-width: 0;
-  height: 60px;
-  display: flex;
+  width: 200px;
+  height: 60px; 
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   text-decoration: none;
+  margin: 5px;
   padding: 10px;
   box-sizing: border-box;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
-#linkContainer a:hover, #linkContainer a:active {
+a:hover, a:active {
   background-color: white;
   color: black;
 }
@@ -69,7 +60,7 @@ function filterLinks() {
   const links = document.querySelectorAll("#linkContainer a");
   links.forEach(link => {
     const text = link.textContent.toLowerCase();
-    link.style.display = text.includes(input) ? "flex" : "none";
+    link.style.display = text.includes(input) ? "inline-block" : "none";
   });
 }
 </script>
