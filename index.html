@@ -2,29 +2,59 @@
 <html>
 <head>
 <style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#searchBar {
+    margin: 20px;
+    padding: 12px;
+    width: calc(100% - 40px);
+    font-size: 18px;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 6px;
+    outline: none;
+}
 a:link, a:visited {
-  background-color: #f44336;
+  background-color: #000000;
   color: white;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  margin: 5px;
 }
-
 a:hover, a:active {
-  background-color: red;
+  background-color: white;
+  color: black;
 }
 </style>
 </head>
 <body>
-
-<a href="main/doom/index.html" target="_blank">Doom</a>
-<a href="main/doom2/index.html" target="_blank">Doom 2</a>
-<a href="main/gta/index.html" target="_blank">Gta 1</a>
-<a href="main/quake/index.html" target="_blank">Quake</a>
-<a href="main/simcity/index.html" target="_blank">Simcity</a>
-<a href="main/mk1/index.html" target="_blank">MK1/Mortal kombat 1</a>
+<input type="text" id="searchBar" placeholder="Search games..." onkeyup="filterLinks()">
+<div id="linkContainer">
+  <a href="main/doom/index.html" target="_blank">Doom</a>
+  <a href="main/doom2/index.html" target="_blank">Doom 2</a>
+  <a href="main/gta/index.html" target="_blank">Gta 1</a>
+  <a href="main/quake/index.html" target="_blank">Quake</a>
+  <a href="main/simcity/index.html" target="_blank">Simcity</a>
+  <a href="main/mk1/index.html" target="_blank">MK1/Mortal kombat 1</a>
+</div>
+<script>
+function filterLinks() {
+  const input = document.getElementById("searchBar").value.toLowerCase();
+  const links = document.querySelectorAll("#linkContainer a");
+  links.forEach(link => {
+    const text = link.textContent.toLowerCase();
+    link.style.display = text.includes(input) ? "inline-block" : "none";
+  });
+}
+</script>
 </body>
 </html>
-
-
