@@ -7,7 +7,6 @@
     <style>
         html, body {
             height: 100%;
-            margin: 0;
         }
 
         #dos {
@@ -24,13 +23,15 @@
 </head>
 <body>
 
-    <div id="dos"></div>
+    <div id="dos" style="width: 100%; height: 100%"></div>
 
     <script>
         Dos(document.getElementById("dos"), {
             url: "../main/bundle.jsdos",
-            noSideBar: true
+            autoStart: true,
+            kiosk: true,
         });
+        Dos(element: HTMLDivElement, options: DosOptions) => DosProps;
     </script>
 </body>
 </html>
