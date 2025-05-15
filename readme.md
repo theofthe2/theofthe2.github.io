@@ -4,4 +4,4 @@ button style is tutorial from [w3schools](https://www.w3schools.com/css/tryit.as
 
 this works using js dos in kiosk mode and full screen feel free to take my stuff idc
 
-gta 1 is a pain as it is more than 25mb and this fluffing cors policy thing doesnt let it work
+FIXED GTA 1 AND QUAKE 2
