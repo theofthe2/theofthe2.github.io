@@ -10,34 +10,43 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #searchBar {
-    margin: 20px;
-    padding: 12px;
-    width: calc(100% - 40px);
-    font-size: 18px;
-    box-sizing: border-box;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border: 1px solid #333;
-    border-radius: 6px;
-    outline: none;
+  margin: 20px;
+  padding: 12px;
+  width: calc(100% - 40px);
+  font-size: 18px;
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  border-radius: 6px;
+  outline: none;
 }
-a:link, a:visited {
+#linkContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+}
+#linkContainer a {
   background-color: #000000;
   color: white;
-  width: 200px;
-  height: 60px; 
-  display: inline-flex;
+  flex: 1;
+  min-width: 0;
+  height: 60px;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   text-decoration: none;
-  margin: 5px;
   padding: 10px;
   box-sizing: border-box;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 6px;
 }
-a:hover, a:active {
+#linkContainer a:hover, #linkContainer a:active {
   background-color: white;
   color: black;
 }
@@ -51,8 +60,8 @@ a:hover, a:active {
   <a href="main/gta/index.html" target="_blank">Gta 1</a>
   <a href="main/quake/index.html" target="_blank">Quake</a>
   <a href="main/simcity/index.html" target="_blank">Simcity</a>
-  <a href="main/monkey/index.html" target="_blank">Secret of monkey island</a>
-  <a href="main/mk1/index.html" target="_blank">MK1/Mortal kombat 1</a>
+  <a href="main/monkey/index.html" target="_blank">Monkey island</a>
+  <a href="main/mk1/index.html" target="_blank">Mortal kombat 1</a>
 </div>
 <script>
 function filterLinks() {
@@ -60,7 +69,7 @@ function filterLinks() {
   const links = document.querySelectorAll("#linkContainer a");
   links.forEach(link => {
     const text = link.textContent.toLowerCase();
-    link.style.display = text.includes(input) ? "inline-block" : "none";
+    link.style.display = text.includes(input) ? "flex" : "none";
   });
 }
 </script>
